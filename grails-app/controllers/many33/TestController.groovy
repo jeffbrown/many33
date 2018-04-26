@@ -1,11 +1,12 @@
 package many33
 
-import grails.transaction.Transactional
 
 class TestController {
-	@Transactional
+    
+    UserService userService
+    
 	def delete(Long id) {
-		User.get(id).delete()
+		userService.delete(id)
 		render "User $id deleted"
 	}
 }
